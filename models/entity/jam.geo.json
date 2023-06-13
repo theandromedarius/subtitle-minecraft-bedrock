@@ -1,0 +1,140 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.jam.puluh",
+				"texture_width": 5,
+				"texture_height": 7,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "jam_anchor",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "jam_pul",
+					"parent": "jam_anchor",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-6, 12, 0], "size": [12, 16, 0],
+							"uv": { "north": {"uv": [0, 0], "uv_size": [5, 7]} }
+						}
+					]
+				}
+			]
+		}, 
+		{
+			"description": {
+				"identifier": "geometry.jam.satuan",
+				"texture_width": 5,
+				"texture_height": 7,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "jam_anchor",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "jam_sat",
+					"parent": "jam_anchor",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [9, 12, 0], "size": [12, 16, 0],
+							"uv": { "north": {"uv": [0, 0], "uv_size": [5, 7]} }
+						}
+					]
+				}
+			]
+		}, 
+		{
+			"description": {
+				"identifier": "geometry.jam.pemisah",
+				"texture_width": 5,
+				"texture_height": 7,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "jam_anchor",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "jam_sah",
+					"parent": "jam_anchor",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [21, 12, 0], "size": [12, 16, 0],
+							"uv": { "north": {"uv": [0, 0], "uv_size": [5, 7]} }
+						}
+					]
+				}
+			]
+		}, 
+		{
+			"description": {
+				"identifier": "geometry.men.puluh",
+				"texture_width": 5,
+				"texture_height": 7,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "jam_anchor",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "men_pul",
+					"parent": "jam_anchor",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [33, 12, 0], "size": [12, 16, 0],
+							"uv": { "north": {"uv": [0, 0], "uv_size": [5, 7]} }
+						}
+					]
+				}
+			]
+		}, 
+		{
+			"description": {
+				"identifier": "geometry.men.satuan",
+				"texture_width": 5,
+				"texture_height": 7,
+				"visible_bounds_width": 7,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "jam_anchor",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "men_sat",
+					"parent": "jam_anchor",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [48, 12, 0], "size": [12, 16, 0],
+							"uv": { "north": {"uv": [0, 0], "uv_size": [5, 7]} }
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "---",
+    "name": "Subtitle",
+    "uuid": "50879e67-88d7-479c-b485-19f42e74a8a6",
+    "version": [1, 20, 0],
+    "min_engine_version": [1, 16, 0]
+  },
+  "modules": [
+    {
+      "description": "----",
+      "type": "resources",
+      "uuid": "f815ca14-2f89-4710-8e04-d2a3c0fa9377",
+      "version": [0, 0, 1]
+    }
+  ]
+}

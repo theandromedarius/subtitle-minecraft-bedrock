@@ -1,0 +1,9 @@
+{
+  "materials": {
+    "version": "1.0.0",
+    "bg:entity_alphatest": {
+      "+defines": [ "ALPHA_TEST" ], 
+      "+states": [ "Blending" ]
+    }
+  }
+}
