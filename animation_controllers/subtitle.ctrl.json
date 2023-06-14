@@ -1,0 +1,50 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.a_creeper": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [{ "active": "v.creeper > 0" }],
+          "on_entry": ["v.a_creeper = 0.0;"],
+          "blend_transition": 0.5
+        },
+        "active": {
+          "on_entry": ["v.a_creeper = 0.2;"],
+          "transitions": [{ "default": "v.creeper <= 0" }],
+          "blend_transition": 1
+        }
+      }
+    },
+    "controller.animation.a_skeleton": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [{ "active": "v.skeleton > 0" }],
+          "on_entry": ["v.a_skeleton = 0.0;"],
+          "blend_transition": 0.5
+        },
+        "active": {
+          "on_entry": ["v.a_skeleton = 0.2;"],
+          "transitions": [{ "default": "v.skeleton <= 0" }],
+          "blend_transition": 1
+        }
+      }
+    },
+    "controller.animation.a_zombie": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [{ "active": "v.zombie > 0" }],
+          "on_entry": ["v.a_zombie = 0.0;"],
+          "blend_transition": 0.5
+        },
+        "active": {
+          "on_entry": ["v.a_zombie = 0.2;"],
+          "transitions": [{ "default": "v.zombie <= 0" }],
+          "blend_transition": 1
+        }
+      }
+    }
+  }
+}

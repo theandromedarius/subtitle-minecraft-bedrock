@@ -1,0 +1,224 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.object.skeleton",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        {
+          "name": "skeleton",
+          "pivot": [0, 0, 0],
+          "cubes": [
+            {
+              "origin": [-9, 12, 0],
+              "size": [16, 2, 0],
+              "uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.zombie",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "skeleton", "pivot": [0, 0, 0] },
+        {
+          "name": "zombie",
+          "pivot": [0, 0, 0],
+          "parent": "skeleton",
+          "cubes": [
+            {
+              "origin": [-9, 12, 0],
+              "size": [16, 2, 0],
+              "uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.creeper",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "skeleton", "pivot": [0, 0, 0] },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "skeleton" },
+        {
+          "name": "creeper",
+          "pivot": [0, 0, 0],
+          "parent": "zombie",
+          "cubes": [
+            {
+              "origin": [-9, 12, 0],
+              "size": [16, 2, 0],
+              "uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.spider",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "skeleton", "pivot": [0, 0, 0] },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "creeper", "pivot": [0, 0, 0], "parent": "zombie" },
+        {
+          "name": "spider",
+          "pivot": [0, 0, 0],
+          "parent": "creeper",
+          "cubes": [
+            {
+              "origin": [-9, 12, 0],
+              "size": [16, 2, 0],
+              "uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.drowned",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "skeleton", "pivot": [0, 0, 0] },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "creeper", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "creeper" },
+        {
+          "name": "drowned",
+          "pivot": [0, 0, 0],
+          "parent": "spider",
+          "cubes": [
+            {
+              "origin": [-9, 12, 0],
+              "size": [16, 2, 0],
+              "uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.enderman",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "skeleton", "pivot": [0, 0, 0] },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "creeper", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "creeper" },
+        { "name": "drowned", "pivot": [0, 0, 0], "parent": "spider" },
+        {
+          "name": "enderman",
+          "pivot": [0, 0, 0],
+          "parent": "drowned",
+          "cubes": [
+            {
+              "origin": [-9, 12, 0],
+              "size": [16, 2, 0],
+              "uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.pillager",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "skeleton", "pivot": [0, 0, 0] },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "creeper", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "creeper" },
+        { "name": "drowned", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "enderman", "pivot": [0, 0, 0], "parent": "drowned" },
+        {
+          "name": "pillager",
+          "pivot": [0, 0, 0],
+          "parent": "enderman",
+          "cubes": [
+            {
+              "origin": [-9, 12, 0],
+              "size": [16, 2, 0],
+              "uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.witch",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "skeleton", "pivot": [0, 0, 0] },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "creeper", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "creeper" },
+        { "name": "drowned", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "enderman", "pivot": [0, 0, 0], "parent": "drowned" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "enderman" },
+        {
+          "name": "witch",
+          "pivot": [0, 0, 0],
+          "parent": "pillager",
+          "cubes": [
+            {
+              "origin": [-9, 12, 0],
+              "size": [16, 2, 0],
+              "uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

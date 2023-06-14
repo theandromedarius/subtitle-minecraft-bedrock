@@ -6,15 +6,32 @@
       "materials": {
         "default": "entity_alphatest",
         "cape": "entity_alphatest",
-        "animated": "player_animated"
+        "animated": "player_animated",
+        "spectator": "player_spectator"
       },
       "textures": {
         "default": "textures/entity/steve",
-        "cape": "textures/entity/cape_invisible"
+        "cape": "textures/entity/cape_invisible",
+        "skeleton": "textures/ui/skeleton",
+        "zombie": "textures/ui/zombie",
+        "creeper": "textures/ui/creeper",
+        "spider": "textures/ui/spider",
+        "drowned": "textures/ui/drowned",
+        "enderman": "textures/ui/enderman",
+        "pillager": "textures/ui/pillager",
+        "witch": "textures/ui/witch"
       },
       "geometry": {
         "default": "geometry.humanoid.custom",
-        "cape": "geometry.cape"
+        "cape": "geometry.cape",
+        "object.skeleton": "geometry.object.skeleton",
+        "object.zombie": "geometry.object.zombie",
+        "object.creeper": "geometry.object.creeper",
+        "object.spider": "geometry.object.spider",
+        "object.drowned": "geometry.object.drowned",
+        "object.enderman": "geometry.object.enderman",
+        "object.pillager": "geometry.object.pillager",
+        "object.witch": "geometry.object.witch"
       },
       "scripts": {
         "scale": "0.9375",
@@ -25,6 +42,39 @@
           "variable.hand_bob = 0.0;"
         ],
         "pre_animation": [
+          "v.blaze = q.count([q.get_nearby_entities(25, 'minecraft:blaze')]);",
+          "v.creeper = q.count([q.get_nearby_entities(25, 'minecraft:creeper')]);",
+          "v.drowned = q.count([q.get_nearby_entities(25, 'minecraft:drowned')]);",
+          "v.elder_guardian = q.count([q.get_nearby_entities(25, 'minecraft:elder_guardian')]);",
+          "v.ender_dragon = q.count([q.get_nearby_entities(25, 'minecraft:ender_dragon')]);",
+          "v.enderman = q.count([q.get_nearby_entities(25, 'minecraft:enderman')]);",
+          "v.endermite = q.count([q.get_nearby_entities(25, 'minecraft:endermite')]);",
+          "v.evoker = q.count([q.get_nearby_entities(25, 'minecraft:evoker')]);",
+          "v.ghast = q.count([q.get_nearby_entities(25, 'minecraft:ghast')]);",
+          "v.guardian = q.count([q.get_nearby_entities(25, 'minecraft:guardian')]);",
+          "v.hoglin = q.count([q.get_nearby_entities(25, 'minecraft:hoglin')]);",
+          "v.husk = q.count([q.get_nearby_entities(25, 'minecraft:husk')]);",
+          "v.magma_cube = q.count([q.get_nearby_entities(25, 'minecraft:magma_cube')]);",
+          "v.phantom = q.count([q.get_nearby_entities(25, 'minecraft:phantom')]);",
+          "v.piglin_brute = q.count([q.get_nearby_entities(25, 'minecraft:piglin_brute')]);",
+          "v.pillager = q.count([q.get_nearby_entities(25, 'minecraft:pillager')]);",
+          "v.ravager = q.count([q.get_nearby_entities(25, 'minecraft:ravager')]);",
+          "v.shulker = q.count([q.get_nearby_entities(25, 'minecraft:shulker')]);",
+          "v.silverfish = q.count([q.get_nearby_entities(25, 'minecraft:silverfish')]);",
+          "v.skeleton = q.count([q.get_nearby_entities(25, 'minecraft:skeleton')]);",
+          "v.slime = q.count([q.get_nearby_entities(25, 'minecraft:slime')]);",
+          "v.spider = q.count([q.get_nearby_entities(25, 'minecraft:spider')]);",
+          "v.stray = q.count([q.get_nearby_entities(25, 'minecraft:stray')]);",
+          "v.vex = q.count([q.get_nearby_entities(25, 'minecraft:vex')]);",
+          "v.vindicator = q.count([q.get_nearby_entities(25, 'minecraft:vindicator')]);",
+          "v.warden = q.count([q.get_nearby_entities(25, 'minecraft:warden')]);",
+          "v.witch = q.count([q.get_nearby_entities(25, 'minecraft:witch')]);",
+          "v.wither = q.count([q.get_nearby_entities(25, 'minecraft:wither')]);",
+          "v.wither_skeleton = q.count([q.get_nearby_entities(25, 'minecraft:wither_skeleton')]);",
+          "v.zoglin = q.count([q.get_nearby_entities(25, 'minecraft:zoglin')]);",
+          "v.zombie = q.count([q.get_nearby_entities(25, 'minecraft:zombie')]);",
+          "v.zombie_villager = q.count([q.get_nearby_entities(25, 'minecraft:zombie_villager')]);",
+
           "v.this_ui = !v.is_first_person && q.is_in_ui && q.is_alive && !q.is_riding && !q.is_gliding;",
           "variable.helmet_layer_visible = 1.0;",
           "variable.leg_layer_visible = 1.0;",
@@ -39,7 +89,7 @@
           "variable.item_use_normalized = query.main_hand_item_use_duration / query.main_hand_item_max_duration;",
           "variable.health = math.round(query.health / query.max_health * 100);"
         ],
-        "animate": ["root", "sub"]
+        "animate": ["root", "subtitle", "c.creeper", "c.skeleton", "c.zombie"]
       },
       "animations": {
         "root": "controller.animation.player.root",
@@ -91,14 +141,50 @@
         "shield_block_main_hand": "animation.player.shield_block_main_hand",
         "shield_block_off_hand": "animation.player.shield_block_off_hand",
         "blink": "controller.animation.persona.blink",
-        "sub": "animation.sub"
+        "subtitle": "animation.subtitle",
+        "c.creeper": "controller.animation.a_creeper",
+        "c.skeleton": "controller.animation.a_skeleton",
+        "c.zombie": "controller.animation.a_zombie"
       },
       "render_controllers": [
         { "controller.render.player.first_person": "variable.is_first_person" },
         {
           "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon"
         },
-        { "controller.render.player.map": "variable.map_face_icon" }
+        { "controller.render.player.map": "variable.map_face_icon" },
+
+        { "controller.render.object.blaze": "v.this_ui" },
+        { "controller.render.object.creeper": "v.this_ui" },
+        { "controller.render.object.drowned": "v.this_ui" },
+        { "controller.render.object.elder_guardian": "v.this_ui" },
+        { "controller.render.object.ender_dragon": "v.this_ui" },
+        { "controller.render.object.enderman": "v.this_ui" },
+        { "controller.render.object.endermite": "v.this_ui" },
+        { "controller.render.object.evoker": "v.this_ui" },
+        { "controller.render.object.ghast": "v.this_ui" },
+        { "controller.render.object.guardian": "v.this_ui" },
+        { "controller.render.object.hoglin": "v.this_ui" },
+        { "controller.render.object.husk": "v.this_ui" },
+        { "controller.render.object.magma_cube": "v.this_ui" },
+        { "controller.render.object.phantom": "v.this_ui" },
+        { "controller.render.object.piglin_brute": "v.this_ui" },
+        { "controller.render.object.pillager": "v.this_ui" },
+        { "controller.render.object.ravager": "v.this_ui" },
+        { "controller.render.object.shulker": "v.this_ui" },
+        { "controller.render.object.silverfish": "v.this_ui" },
+        { "controller.render.object.skeleton": "v.this_ui" },
+        { "controller.render.object.slime": "v.this_ui" },
+        { "controller.render.object.spider": "v.this_ui" },
+        { "controller.render.object.stray": "v.this_ui" },
+        { "controller.render.object.vex": "v.this_ui" },
+        { "controller.render.object.vindicator": "v.this_ui" },
+        { "controller.render.object.warden": "v.this_ui" },
+        { "controller.render.object.witch": "v.this_ui" },
+        { "controller.render.object.wither": "v.this_ui" },
+        { "controller.render.object.wither_skeleton": "v.this_ui" },
+        { "controller.render.object.zoglin": "v.this_ui" },
+        { "controller.render.object.zombie": "v.this_ui" },
+        { "controller.render.object.zombie_villager": "v.this_ui" }
       ],
       "enable_attachables": true
     }

@@ -1,0 +1,21 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.subtitle": {
+      "loop": true,
+      "bones": {
+        "skeleton": {
+          "position": [62.0, "q.is_swimming ? -902 : -884.86", 0.0],
+          "scale": 4
+        },
+        "zombie": { "position": [0.0, "(v.skeleton > 0) ? 2 : 0.0", 0.0] },
+        "creeper": { "position": [0.0, "(v.zombie > 0) ? 2 : 0.0", 0.0] },
+        "spider": { "position": [0.0, "(v.creeper > 0) ? 2 : 0.0", 0.0] },
+        "drowned": { "position": [0.0, "(v.spider > 0) ? 2 : 0.0", 0.0] },
+        "enderman": { "position": [0.0, "(v.drowned > 0) ? 2 : 0.0", 0.0] },
+        "pillager": { "position": [0.0, "(v.enderman > 0) ? 2 : 0.0", 0.0] },
+        "witch": { "position": [0.0, "(v.pillager > 0) ? 2 : 0.0", 0.0] }
+      }
+    }
+  }
+}

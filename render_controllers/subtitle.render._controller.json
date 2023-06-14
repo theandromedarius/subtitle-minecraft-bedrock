@@ -1,0 +1,191 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.object.blaze": {
+      "textures": ["Texture.blaze"],
+      "part_visibility": [{ "*": "v.blaze > 0" }],
+      "geometry": "Geometry.object.blaze",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.creeper": {
+      "textures": ["Texture.creeper"],
+      "part_visibility": [{ "*": "v.creeper > 0" }],
+      "geometry": "Geometry.object.creeper",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.drowned": {
+      "textures": ["Texture.creeper"],
+      "part_visibility": [{ "*": "v.drowned > 0" }],
+      "geometry": "Geometry.object.drowned",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.elder_guardian": {
+      "textures": ["Texture.elder_guardian"],
+      "part_visibility": [{ "*": "v.elder_guardian > 0" }],
+      "geometry": "Geometry.object.elder_guardian",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.ender_dragon": {
+      "textures": ["Texture.ender_dragon"],
+      "part_visibility": [{ "*": "v.ender_dragon > 0" }],
+      "geometry": "Geometry.object.ender_dragon",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.enderman": {
+      "textures": ["Texture.enderman"],
+      "part_visibility": [{ "*": "v.enderman > 0" }],
+      "geometry": "Geometry.object.enderman",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.endermite": {
+      "textures": ["Texture.endermite"],
+      "part_visibility": [{ "*": "v.endermite > 0" }],
+      "geometry": "Geometry.object.endermite",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.evoker": {
+      "textures": ["Texture.evoker"],
+      "part_visibility": [{ "*": "v.evoker > 0" }],
+      "geometry": "Geometry.object.evoker",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.ghast": {
+      "textures": ["Texture.ghast"],
+      "part_visibility": [{ "*": "v.ghast > 0" }],
+      "geometry": "Geometry.object.ghast",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.guardian": {
+      "textures": ["Texture.guardian"],
+      "part_visibility": [{ "*": "v.guardian > 0" }],
+      "geometry": "Geometry.object.guardian",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.hoglin": {
+      "textures": ["Texture.hoglin"],
+      "part_visibility": [{ "*": "v.hoglin > 0" }],
+      "geometry": "Geometry.object.hoglin",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.husk": {
+      "textures": ["Texture.husk"],
+      "part_visibility": [{ "*": "v.husk > 0" }],
+      "geometry": "Geometry.object.husk",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.magma_cube": {
+      "textures": ["Texture.magma_cube"],
+      "part_visibility": [{ "*": "v.magma_cube > 0" }],
+      "geometry": "Geometry.object.magma_cube",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.phantom": {
+      "textures": ["Texture.phantom"],
+      "part_visibility": [{ "*": "v.phantom > 0" }],
+      "geometry": "Geometry.object.phantom",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.piglin_brute": {
+      "textures": ["Texture.piglin_brute"],
+      "part_visibility": [{ "*": "v.piglin_brute > 0" }],
+      "geometry": "Geometry.object.piglin_brute",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.pillager": {
+      "textures": ["Texture.piglin_brute"],
+      "part_visibility": [{ "*": "v.pillager > 0" }],
+      "geometry": "Geometry.object.pillager",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.ravager": {
+      "textures": ["Texture.ravager"],
+      "part_visibility": [{ "*": "v.ravager > 0" }],
+      "geometry": "Geometry.object.ravager",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.silverfish": {
+      "textures": ["Texture.silverfish"],
+      "part_visibility": [{ "*": "v.silverfish > 0" }],
+      "geometry": "Geometry.object.silverfish",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.skeleton": {
+      "textures": ["Texture.skeleton"],
+      "part_visibility": [{ "*": "v.skeleton > 0" }],
+      "geometry": "Geometry.object.skeleton",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.slime": {
+      "textures": ["Texture.slime"],
+      "part_visibility": [{ "*": "v.slime > 0" }],
+      "geometry": "Geometry.object.slime",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.spider": {
+      "textures": ["Texture.spider"],
+      "part_visibility": [{ "*": "v.spider > 0" }],
+      "geometry": "Geometry.object.spider",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.stray": {
+      "textures": ["Texture.stray"],
+      "part_visibility": [{ "*": "v.stray > 0" }],
+      "geometry": "Geometry.object.stray",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.vex": {
+      "textures": ["Texture.vex"],
+      "part_visibility": [{ "*": "v.vex > 0" }],
+      "geometry": "Geometry.object.vex",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.vindicator": {
+      "textures": ["Texture.witch"],
+      "part_visibility": [{ "*": "v.vindicator > 0" }],
+      "geometry": "Geometry.object.vindicator",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.warden": {
+      "textures": ["Texture.witch"],
+      "part_visibility": [{ "*": "v.warden > 0" }],
+      "geometry": "Geometry.object.warden",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.witch": {
+      "textures": ["Texture.witch"],
+      "part_visibility": [{ "*": "v.witch > 0" }],
+      "geometry": "Geometry.object.witch",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.wither": {
+      "textures": ["Texture.wither"],
+      "part_visibility": [{ "*": "v.wither > 0" }],
+      "geometry": "Geometry.object.wither",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.wither_skeleton": {
+      "textures": ["Texture.wither"],
+      "part_visibility": [{ "*": "v.wither_skeleton > 0" }],
+      "geometry": "Geometry.object.wither_skeleton",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.zoglin": {
+      "textures": ["Texture.zoglin"],
+      "part_visibility": [{ "*": "v.zoglin > 0" }],
+      "geometry": "Geometry.object.zoglin",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.zombie": {
+      "textures": ["Texture.zombie"],
+      "part_visibility": [{ "*": "v.zombie > 0" }],
+      "geometry": "Geometry.object.zombie",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.zombie_villager": {
+      "textures": ["Texture.zombie_villager"],
+      "part_visibility": [{ "*": "v.zombie_villager > 0" }],
+      "geometry": "Geometry.object.zombie_villager",
+      "materials": [{ "*": "Material.default" }]
+    }
+  }
+}
