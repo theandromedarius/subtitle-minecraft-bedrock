@@ -14,7 +14,7 @@
       "materials": [{ "*": "Material.default" }]
     },
     "controller.render.object.drowned": {
-      "textures": ["Texture.creeper"],
+      "textures": ["Texture.drowned"],
       "part_visibility": [{ "*": "v.drowned > 0" }],
       "geometry": "Geometry.object.drowned",
       "materials": [{ "*": "Material.default" }]
@@ -85,6 +85,12 @@
       "geometry": "Geometry.object.phantom",
       "materials": [{ "*": "Material.default" }]
     },
+    "controller.render.object.piglin": {
+      "textures": ["Texture.piglin"],
+      "part_visibility": [{ "*": "v.piglin > 0" }],
+      "geometry": "Geometry.object.piglin",
+      "materials": [{ "*": "Material.default" }]
+    },
     "controller.render.object.piglin_brute": {
       "textures": ["Texture.piglin_brute"],
       "part_visibility": [{ "*": "v.piglin_brute > 0" }],
@@ -92,7 +98,7 @@
       "materials": [{ "*": "Material.default" }]
     },
     "controller.render.object.pillager": {
-      "textures": ["Texture.piglin_brute"],
+      "textures": ["Texture.pillager"],
       "part_visibility": [{ "*": "v.pillager > 0" }],
       "geometry": "Geometry.object.pillager",
       "materials": [{ "*": "Material.default" }]
@@ -140,13 +146,13 @@
       "materials": [{ "*": "Material.default" }]
     },
     "controller.render.object.vindicator": {
-      "textures": ["Texture.witch"],
+      "textures": ["Texture.vindicator"],
       "part_visibility": [{ "*": "v.vindicator > 0" }],
       "geometry": "Geometry.object.vindicator",
       "materials": [{ "*": "Material.default" }]
     },
     "controller.render.object.warden": {
-      "textures": ["Texture.witch"],
+      "textures": ["Texture.warden"],
       "part_visibility": [{ "*": "v.warden > 0" }],
       "geometry": "Geometry.object.warden",
       "materials": [{ "*": "Material.default" }]
@@ -164,7 +170,7 @@
       "materials": [{ "*": "Material.default" }]
     },
     "controller.render.object.wither_skeleton": {
-      "textures": ["Texture.wither"],
+      "textures": ["Texture.wither_skeleton"],
       "part_visibility": [{ "*": "v.wither_skeleton > 0" }],
       "geometry": "Geometry.object.wither_skeleton",
       "materials": [{ "*": "Material.default" }]
@@ -179,6 +185,12 @@
       "textures": ["Texture.zombie"],
       "part_visibility": [{ "*": "v.zombie > 0" }],
       "geometry": "Geometry.object.zombie",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.zombie_pigman": {
+      "textures": ["Texture.zombie_pigman"],
+      "part_visibility": [{ "*": "v.zombie_pigman > 0" }],
+      "geometry": "Geometry.object.zombie_pigman",
       "materials": [{ "*": "Material.default" }]
     },
     "controller.render.object.zombie_villager": {
