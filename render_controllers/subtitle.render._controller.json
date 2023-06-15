@@ -43,10 +43,10 @@
       "geometry": "Geometry.object.endermite",
       "materials": [{ "*": "Material.default" }]
     },
-    "controller.render.object.evoker": {
-      "textures": ["Texture.evoker"],
-      "part_visibility": [{ "*": "v.evoker > 0" }],
-      "geometry": "Geometry.object.evoker",
+    "controller.render.object.evocation_illager": {
+      "textures": ["Texture.evocation_illager"],
+      "part_visibility": [{ "*": "v.evocation_illager > 0" }],
+      "geometry": "Geometry.object.evocation_illager",
       "materials": [{ "*": "Material.default" }]
     },
     "controller.render.object.ghast": {
@@ -107,6 +107,12 @@
       "textures": ["Texture.ravager"],
       "part_visibility": [{ "*": "v.ravager > 0" }],
       "geometry": "Geometry.object.ravager",
+      "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.shulker": {
+      "textures": ["Texture.shulker"],
+      "part_visibility": [{ "*": "v.shulker > 0" }],
+      "geometry": "Geometry.object.shulker",
       "materials": [{ "*": "Material.default" }]
     },
     "controller.render.object.silverfish": {

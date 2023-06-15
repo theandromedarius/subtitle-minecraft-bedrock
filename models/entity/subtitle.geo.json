@@ -3,7 +3,7 @@
   "minecraft:geometry": [
     {
       "description": {
-        "identifier": "geometry.object.skeleton",
+        "identifier": "geometry.object.zombie.villager",
         "texture_width": 16,
         "texture_height": 16,
         "visible_bounds_width": 3,
@@ -12,15 +12,28 @@
       },
       "bones": [
         {
-          "name": "skeleton",
+          "name": "zombie_villager",
           "pivot": [0, 0, 0],
-          "cubes": [
-            {
-              "origin": [-9, 12, 0],
-              "size": [16, 2, 0],
-              "uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }
-            }
-          ]
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.zombie.pigman",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        {
+          "name": "zombie_pigman",
+          "pivot": [0, 0, 0],
+          "parent": "zombie_villager",
+          "cubes": [ { "origin": [-9, 12, 0], "size": [16, 2, 0], "uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } } } ]
         }
       ]
     },
@@ -34,24 +47,19 @@
         "visible_bounds_offset": [0, 0.75, 0]
       },
       "bones": [
-        { "name": "skeleton", "pivot": [0, 0, 0] },
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
         {
           "name": "zombie",
           "pivot": [0, 0, 0],
-          "parent": "skeleton",
-          "cubes": [
-            {
-              "origin": [-9, 12, 0],
-              "size": [16, 2, 0],
-              "uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }
-            }
-          ]
+          "parent": "zombie_pigman",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
         }
       ]
     },
     {
       "description": {
-        "identifier": "geometry.object.creeper",
+        "identifier": "geometry.object.zoglin",
         "texture_width": 16,
         "texture_height": 16,
         "visible_bounds_width": 3,
@@ -59,25 +67,21 @@
         "visible_bounds_offset": [0, 0.75, 0]
       },
       "bones": [
-        { "name": "skeleton", "pivot": [0, 0, 0] },
-        { "name": "zombie", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
         {
-          "name": "creeper",
+          "name": "zoglin",
           "pivot": [0, 0, 0],
           "parent": "zombie",
-          "cubes": [
-            {
-              "origin": [-9, 12, 0],
-              "size": [16, 2, 0],
-              "uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }
-            }
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}
           ]
         }
       ]
     },
     {
       "description": {
-        "identifier": "geometry.object.spider",
+        "identifier": "geometry.object.wither.skeleton",
         "texture_width": 16,
         "texture_height": 16,
         "visible_bounds_width": 3,
@@ -85,26 +89,21 @@
         "visible_bounds_offset": [0, 0.75, 0]
       },
       "bones": [
-        { "name": "skeleton", "pivot": [0, 0, 0] },
-        { "name": "zombie", "pivot": [0, 0, 0], "parent": "skeleton" },
-        { "name": "creeper", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
         {
-          "name": "spider",
+          "name": "wither_skeleton",
           "pivot": [0, 0, 0],
-          "parent": "creeper",
-          "cubes": [
-            {
-              "origin": [-9, 12, 0],
-              "size": [16, 2, 0],
-              "uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }
-            }
-          ]
+          "parent": "zoglin",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
         }
       ]
     },
     {
       "description": {
-        "identifier": "geometry.object.drowned",
+        "identifier": "geometry.object.wither",
         "texture_width": 16,
         "texture_height": 16,
         "visible_bounds_width": 3,
@@ -112,80 +111,16 @@
         "visible_bounds_offset": [0, 0.75, 0]
       },
       "bones": [
-        { "name": "skeleton", "pivot": [0, 0, 0] },
-        { "name": "zombie", "pivot": [0, 0, 0], "parent": "skeleton" },
-        { "name": "creeper", "pivot": [0, 0, 0], "parent": "zombie" },
-        { "name": "spider", "pivot": [0, 0, 0], "parent": "creeper" },
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
         {
-          "name": "drowned",
+          "name": "wither",
           "pivot": [0, 0, 0],
-          "parent": "spider",
-          "cubes": [
-            {
-              "origin": [-9, 12, 0],
-              "size": [16, 2, 0],
-              "uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": {
-        "identifier": "geometry.object.enderman",
-        "texture_width": 16,
-        "texture_height": 16,
-        "visible_bounds_width": 3,
-        "visible_bounds_height": 2.5,
-        "visible_bounds_offset": [0, 0.75, 0]
-      },
-      "bones": [
-        { "name": "skeleton", "pivot": [0, 0, 0] },
-        { "name": "zombie", "pivot": [0, 0, 0], "parent": "skeleton" },
-        { "name": "creeper", "pivot": [0, 0, 0], "parent": "zombie" },
-        { "name": "spider", "pivot": [0, 0, 0], "parent": "creeper" },
-        { "name": "drowned", "pivot": [0, 0, 0], "parent": "spider" },
-        {
-          "name": "enderman",
-          "pivot": [0, 0, 0],
-          "parent": "drowned",
-          "cubes": [
-            {
-              "origin": [-9, 12, 0],
-              "size": [16, 2, 0],
-              "uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": {
-        "identifier": "geometry.object.pillager",
-        "texture_width": 16,
-        "texture_height": 16,
-        "visible_bounds_width": 3,
-        "visible_bounds_height": 2.5,
-        "visible_bounds_offset": [0, 0.75, 0]
-      },
-      "bones": [
-        { "name": "skeleton", "pivot": [0, 0, 0] },
-        { "name": "zombie", "pivot": [0, 0, 0], "parent": "skeleton" },
-        { "name": "creeper", "pivot": [0, 0, 0], "parent": "zombie" },
-        { "name": "spider", "pivot": [0, 0, 0], "parent": "creeper" },
-        { "name": "drowned", "pivot": [0, 0, 0], "parent": "spider" },
-        { "name": "enderman", "pivot": [0, 0, 0], "parent": "drowned" },
-        {
-          "name": "pillager",
-          "pivot": [0, 0, 0],
-          "parent": "enderman",
-          "cubes": [
-            {
-              "origin": [-9, 12, 0],
-              "size": [16, 2, 0],
-              "uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }
-            }
-          ]
+          "parent": "wither_skeleton",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
         }
       ]
     },
@@ -199,24 +134,1093 @@
         "visible_bounds_offset": [0, 0.75, 0]
       },
       "bones": [
-        { "name": "skeleton", "pivot": [0, 0, 0] },
-        { "name": "zombie", "pivot": [0, 0, 0], "parent": "skeleton" },
-        { "name": "creeper", "pivot": [0, 0, 0], "parent": "zombie" },
-        { "name": "spider", "pivot": [0, 0, 0], "parent": "creeper" },
-        { "name": "drowned", "pivot": [0, 0, 0], "parent": "spider" },
-        { "name": "enderman", "pivot": [0, 0, 0], "parent": "drowned" },
-        { "name": "pillager", "pivot": [0, 0, 0], "parent": "enderman" },
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
         {
           "name": "witch",
           "pivot": [0, 0, 0],
+          "parent": "wither",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.warden",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        {
+          "name": "warden",
+          "pivot": [0, 0, 0],
+          "parent": "witch",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.vindicator",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        {
+          "name": "vindicator",
+          "pivot": [0, 0, 0],
+          "parent": "witch",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.vex",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        {
+          "name": "vex",
+          "pivot": [0, 0, 0],
+          "parent": "vindicator",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.stray",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        {
+          "name": "stray",
+          "pivot": [0, 0, 0],
+          "parent": "vex",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.spider",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        {
+          "name": "spider",
+          "pivot": [0, 0, 0],
+          "parent": "stray",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.slime",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        {
+          "name": "slime",
+          "pivot": [0, 0, 0],
+          "parent": "spider",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.skeleton",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        {
+          "name": "skeleton",
+          "pivot": [0, 0, 0],
+          "parent": "slime",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.silverfish",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        {
+          "name": "silverfish",
+          "pivot": [0, 0, 0],
+          "parent": "skeleton",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.shulker",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        {
+          "name": "shulker",
+          "pivot": [0, 0, 0],
+          "parent": "silverfish",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.ravager",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        {
+          "name": "ravager",
+          "pivot": [0, 0, 0],
+          "parent": "shulker",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.pillager",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        {
+          "name": "pillager",
+          "pivot": [0, 0, 0],
+          "parent": "ravager",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.piglin.brute",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "ravager" },
+        {
+          "name": "piglin_brute",
+          "pivot": [0, 0, 0],
           "parent": "pillager",
-          "cubes": [
-            {
-              "origin": [-9, 12, 0],
-              "size": [16, 2, 0],
-              "uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }
-            }
-          ]
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.piglin",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "ravager" },
+        { "name": "piglin_brute", "pivot": [0, 0, 0], "parent": "pillager" },
+        {
+          "name": "piglin",
+          "pivot": [0, 0, 0],
+          "parent": "piglin_brute",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.phantom",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "ravager" },
+        { "name": "piglin_brute", "pivot": [0, 0, 0], "parent": "pillager" },
+        { "name": "piglin", "pivot": [0, 0, 0], "parent": "piglin_brute" },
+        {
+          "name": "phantom",
+          "pivot": [0, 0, 0],
+          "parent": "piglin",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.magma.cube",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "ravager" },
+        { "name": "piglin_brute", "pivot": [0, 0, 0], "parent": "pillager" },
+        { "name": "piglin", "pivot": [0, 0, 0], "parent": "piglin_brute" },
+        { "name": "phantom", "pivot": [0, 0, 0], "parent": "piglin" },
+        {
+          "name": "magma_cube",
+          "pivot": [0, 0, 0],
+          "parent": "piglin",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.husk",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "ravager" },
+        { "name": "piglin_brute", "pivot": [0, 0, 0], "parent": "pillager" },
+        { "name": "piglin", "pivot": [0, 0, 0], "parent": "piglin_brute" },
+        { "name": "phantom", "pivot": [0, 0, 0], "parent": "piglin" },
+        { "name": "magma_cube", "pivot": [0, 0, 0], "parent": "phantom" },
+        {
+          "name": "husk",
+          "pivot": [0, 0, 0],
+          "parent": "magma_cube",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.hoglin",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "ravager" },
+        { "name": "piglin_brute", "pivot": [0, 0, 0], "parent": "pillager" },
+        { "name": "piglin", "pivot": [0, 0, 0], "parent": "piglin_brute" },
+        { "name": "phantom", "pivot": [0, 0, 0], "parent": "piglin" },
+        { "name": "magma_cube", "pivot": [0, 0, 0], "parent": "phantom" },
+        { "name": "husk", "pivot": [0, 0, 0], "parent": "magma_cube" },
+        {
+          "name": "hoglin",
+          "pivot": [0, 0, 0],
+          "parent": "husk",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.guardian",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "ravager" },
+        { "name": "piglin_brute", "pivot": [0, 0, 0], "parent": "pillager" },
+        { "name": "piglin", "pivot": [0, 0, 0], "parent": "piglin_brute" },
+        { "name": "phantom", "pivot": [0, 0, 0], "parent": "piglin" },
+        { "name": "magma_cube", "pivot": [0, 0, 0], "parent": "phantom" },
+        { "name": "husk", "pivot": [0, 0, 0], "parent": "magma_cube" },
+        { "name": "hoglin", "pivot": [0, 0, 0], "parent": "husk" },
+        {
+          "name": "guardian",
+          "pivot": [0, 0, 0],
+          "parent": "hoglin",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.ghast",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "ravager" },
+        { "name": "piglin_brute", "pivot": [0, 0, 0], "parent": "pillager" },
+        { "name": "piglin", "pivot": [0, 0, 0], "parent": "piglin_brute" },
+        { "name": "phantom", "pivot": [0, 0, 0], "parent": "piglin" },
+        { "name": "magma_cube", "pivot": [0, 0, 0], "parent": "phantom" },
+        { "name": "husk", "pivot": [0, 0, 0], "parent": "magma_cube" },
+        { "name": "hoglin", "pivot": [0, 0, 0], "parent": "husk" },
+        { "name": "guardian", "pivot": [0, 0, 0], "parent": "hoglin" },
+        {
+          "name": "ghast",
+          "pivot": [0, 0, 0],
+          "parent": "guardian",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.evocation.illager",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "ravager" },
+        { "name": "piglin_brute", "pivot": [0, 0, 0], "parent": "pillager" },
+        { "name": "piglin", "pivot": [0, 0, 0], "parent": "piglin_brute" },
+        { "name": "phantom", "pivot": [0, 0, 0], "parent": "piglin" },
+        { "name": "magma_cube", "pivot": [0, 0, 0], "parent": "phantom" },
+        { "name": "husk", "pivot": [0, 0, 0], "parent": "magma_cube" },
+        { "name": "hoglin", "pivot": [0, 0, 0], "parent": "husk" },
+        { "name": "guardian", "pivot": [0, 0, 0], "parent": "hoglin" },
+        { "name": "ghast", "pivot": [0, 0, 0], "parent": "guardian" },
+        {
+          "name": "evocation_illager",
+          "pivot": [0, 0, 0],
+          "parent": "ghast",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.endermite",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "ravager" },
+        { "name": "piglin_brute", "pivot": [0, 0, 0], "parent": "pillager" },
+        { "name": "piglin", "pivot": [0, 0, 0], "parent": "piglin_brute" },
+        { "name": "phantom", "pivot": [0, 0, 0], "parent": "piglin" },
+        { "name": "magma_cube", "pivot": [0, 0, 0], "parent": "phantom" },
+        { "name": "husk", "pivot": [0, 0, 0], "parent": "magma_cube" },
+        { "name": "hoglin", "pivot": [0, 0, 0], "parent": "husk" },
+        { "name": "guardian", "pivot": [0, 0, 0], "parent": "hoglin" },
+        { "name": "ghast", "pivot": [0, 0, 0], "parent": "guardian" },
+        { "name": "evocation_illager", "pivot": [0, 0, 0], "parent": "ghast" },
+        {
+          "name": "endermite",
+          "pivot": [0, 0, 0],
+          "parent": "evocation_illager",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.enderman",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "ravager" },
+        { "name": "piglin_brute", "pivot": [0, 0, 0], "parent": "pillager" },
+        { "name": "piglin", "pivot": [0, 0, 0], "parent": "piglin_brute" },
+        { "name": "phantom", "pivot": [0, 0, 0], "parent": "piglin" },
+        { "name": "magma_cube", "pivot": [0, 0, 0], "parent": "phantom" },
+        { "name": "husk", "pivot": [0, 0, 0], "parent": "magma_cube" },
+        { "name": "hoglin", "pivot": [0, 0, 0], "parent": "husk" },
+        { "name": "guardian", "pivot": [0, 0, 0], "parent": "hoglin" },
+        { "name": "ghast", "pivot": [0, 0, 0], "parent": "guardian" },
+        { "name": "evocation_illager", "pivot": [0, 0, 0], "parent": "ghast" },
+        { "name": "endermite", "pivot": [0, 0, 0], "parent": "evocation_illager" },
+        {
+          "name": "enderman",
+          "pivot": [0, 0, 0],
+          "parent": "endermite",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.ender.dragon",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "ravager" },
+        { "name": "piglin_brute", "pivot": [0, 0, 0], "parent": "pillager" },
+        { "name": "piglin", "pivot": [0, 0, 0], "parent": "piglin_brute" },
+        { "name": "phantom", "pivot": [0, 0, 0], "parent": "piglin" },
+        { "name": "magma_cube", "pivot": [0, 0, 0], "parent": "phantom" },
+        { "name": "husk", "pivot": [0, 0, 0], "parent": "magma_cube" },
+        { "name": "hoglin", "pivot": [0, 0, 0], "parent": "husk" },
+        { "name": "guardian", "pivot": [0, 0, 0], "parent": "hoglin" },
+        { "name": "ghast", "pivot": [0, 0, 0], "parent": "guardian" },
+        { "name": "evocation_illager", "pivot": [0, 0, 0], "parent": "ghast" },
+        { "name": "endermite", "pivot": [0, 0, 0], "parent": "evocation_illager" },
+        { "name": "enderman", "pivot": [0, 0, 0], "parent": "endermite" },
+        {
+          "name": "ender_dragon",
+          "pivot": [0, 0, 0],
+          "parent": "enderman",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.elder.guardian",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "ravager" },
+        { "name": "piglin_brute", "pivot": [0, 0, 0], "parent": "pillager" },
+        { "name": "piglin", "pivot": [0, 0, 0], "parent": "piglin_brute" },
+        { "name": "phantom", "pivot": [0, 0, 0], "parent": "piglin" },
+        { "name": "magma_cube", "pivot": [0, 0, 0], "parent": "phantom" },
+        { "name": "husk", "pivot": [0, 0, 0], "parent": "magma_cube" },
+        { "name": "hoglin", "pivot": [0, 0, 0], "parent": "husk" },
+        { "name": "guardian", "pivot": [0, 0, 0], "parent": "hoglin" },
+        { "name": "ghast", "pivot": [0, 0, 0], "parent": "guardian" },
+        { "name": "evocation_illager", "pivot": [0, 0, 0], "parent": "ghast" },
+        { "name": "endermite", "pivot": [0, 0, 0], "parent": "evocation_illager" },
+        { "name": "enderman", "pivot": [0, 0, 0], "parent": "endermite" },
+        { "name": "ender_dragon", "pivot": [0, 0, 0], "parent": "enderman" },
+        {
+          "name": "elder_guardian",
+          "pivot": [0, 0, 0],
+          "parent": "ender_dragon",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.drowned",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "ravager" },
+        { "name": "piglin_brute", "pivot": [0, 0, 0], "parent": "pillager" },
+        { "name": "piglin", "pivot": [0, 0, 0], "parent": "piglin_brute" },
+        { "name": "phantom", "pivot": [0, 0, 0], "parent": "piglin" },
+        { "name": "magma_cube", "pivot": [0, 0, 0], "parent": "phantom" },
+        { "name": "husk", "pivot": [0, 0, 0], "parent": "magma_cube" },
+        { "name": "hoglin", "pivot": [0, 0, 0], "parent": "husk" },
+        { "name": "guardian", "pivot": [0, 0, 0], "parent": "hoglin" },
+        { "name": "ghast", "pivot": [0, 0, 0], "parent": "guardian" },
+        { "name": "evocation_illager", "pivot": [0, 0, 0], "parent": "ghast" },
+        { "name": "endermite", "pivot": [0, 0, 0], "parent": "evocation_illager" },
+        { "name": "enderman", "pivot": [0, 0, 0], "parent": "endermite" },
+        { "name": "ender_dragon", "pivot": [0, 0, 0], "parent": "enderman" },
+        { "name": "elder_guardian", "pivot": [0, 0, 0], "parent": "ender_dragon" },
+        {
+          "name": "drowned",
+          "pivot": [0, 0, 0],
+          "parent": "elder_guardian",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.creeper",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "ravager" },
+        { "name": "piglin_brute", "pivot": [0, 0, 0], "parent": "pillager" },
+        { "name": "piglin", "pivot": [0, 0, 0], "parent": "piglin_brute" },
+        { "name": "phantom", "pivot": [0, 0, 0], "parent": "piglin" },
+        { "name": "magma_cube", "pivot": [0, 0, 0], "parent": "phantom" },
+        { "name": "husk", "pivot": [0, 0, 0], "parent": "magma_cube" },
+        { "name": "hoglin", "pivot": [0, 0, 0], "parent": "husk" },
+        { "name": "guardian", "pivot": [0, 0, 0], "parent": "hoglin" },
+        { "name": "ghast", "pivot": [0, 0, 0], "parent": "guardian" },
+        { "name": "evocation_illager", "pivot": [0, 0, 0], "parent": "ghast" },
+        { "name": "endermite", "pivot": [0, 0, 0], "parent": "evocation_illager" },
+        { "name": "enderman", "pivot": [0, 0, 0], "parent": "endermite" },
+        { "name": "ender_dragon", "pivot": [0, 0, 0], "parent": "enderman" },
+        { "name": "elder_guardian", "pivot": [0, 0, 0], "parent": "ender_dragon" },
+        { "name": "drowned", "pivot": [0, 0, 0], "parent": "elder_guardian" },
+        {
+          "name": "creeper",
+          "pivot": [0, 0, 0],
+          "parent": "drowned",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.creeper",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "ravager" },
+        { "name": "piglin_brute", "pivot": [0, 0, 0], "parent": "pillager" },
+        { "name": "piglin", "pivot": [0, 0, 0], "parent": "piglin_brute" },
+        { "name": "phantom", "pivot": [0, 0, 0], "parent": "piglin" },
+        { "name": "magma_cube", "pivot": [0, 0, 0], "parent": "phantom" },
+        { "name": "husk", "pivot": [0, 0, 0], "parent": "magma_cube" },
+        { "name": "hoglin", "pivot": [0, 0, 0], "parent": "husk" },
+        { "name": "guardian", "pivot": [0, 0, 0], "parent": "hoglin" },
+        { "name": "ghast", "pivot": [0, 0, 0], "parent": "guardian" },
+        { "name": "evocation_illager", "pivot": [0, 0, 0], "parent": "ghast" },
+        { "name": "endermite", "pivot": [0, 0, 0], "parent": "evocation_illager" },
+        { "name": "enderman", "pivot": [0, 0, 0], "parent": "endermite" },
+        { "name": "ender_dragon", "pivot": [0, 0, 0], "parent": "enderman" },
+        { "name": "elder_guardian", "pivot": [0, 0, 0], "parent": "ender_dragon" },
+        { "name": "drowned", "pivot": [0, 0, 0], "parent": "elder_guardian" },
+        {
+          "name": "creeper",
+          "pivot": [0, 0, 0],
+          "parent": "drowned",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.object.blaze",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 3,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [0, 0.75, 0]
+      },
+      "bones": [
+        { "name": "zombie_villager", "pivot": [0, 0, 0] },
+        { "name": "zombie_pigman", "pivot": [0, 0, 0], "parent": "zombie_villager" },
+        { "name": "zombie", "pivot": [0, 0, 0], "parent": "zombie_pigman" },
+        { "name": "zoglin", "pivot": [0, 0, 0], "parent": "zombie" },
+        { "name": "wither_skeleton", "pivot": [0, 0, 0], "parent": "zoglin" },
+        { "name": "wither", "pivot": [0, 0, 0], "parent": "wither_skeleton" },
+        { "name": "witch", "pivot": [0, 0, 0], "parent": "wither" },
+        { "name": "warden", "pivot": [0, 0, 0], "parent": "witch" },
+        { "name": "vindicator", "pivot": [0, 0, 0], "parent": "warden" },
+        { "name": "vex", "pivot": [0, 0, 0], "parent": "vindicator" },
+        { "name": "stray", "pivot": [0, 0, 0], "parent": "vex" },
+        { "name": "spider", "pivot": [0, 0, 0], "parent": "stray" },
+        { "name": "slime", "pivot": [0, 0, 0], "parent": "spider" },
+        { "name": "skeleton", "pivot": [0, 0, 0], "parent": "slime" },
+        { "name": "silverfish", "pivot": [0, 0, 0], "parent": "skeleton" },
+        { "name": "shulker", "pivot": [0, 0, 0], "parent": "silverfish" },
+        { "name": "ravager", "pivot": [0, 0, 0], "parent": "shulker" },
+        { "name": "pillager", "pivot": [0, 0, 0], "parent": "ravager" },
+        { "name": "piglin_brute", "pivot": [0, 0, 0], "parent": "pillager" },
+        { "name": "piglin", "pivot": [0, 0, 0], "parent": "piglin_brute" },
+        { "name": "phantom", "pivot": [0, 0, 0], "parent": "piglin" },
+        { "name": "magma_cube", "pivot": [0, 0, 0], "parent": "phantom" },
+        { "name": "husk", "pivot": [0, 0, 0], "parent": "magma_cube" },
+        { "name": "hoglin", "pivot": [0, 0, 0], "parent": "husk" },
+        { "name": "guardian", "pivot": [0, 0, 0], "parent": "hoglin" },
+        { "name": "ghast", "pivot": [0, 0, 0], "parent": "guardian" },
+        { "name": "evocation_illager", "pivot": [0, 0, 0], "parent": "ghast" },
+        { "name": "endermite", "pivot": [0, 0, 0], "parent": "evocation_illager" },
+        { "name": "enderman", "pivot": [0, 0, 0], "parent": "endermite" },
+        { "name": "ender_dragon", "pivot": [0, 0, 0], "parent": "enderman" },
+        { "name": "elder_guardian", "pivot": [0, 0, 0], "parent": "ender_dragon" },
+        { "name": "drowned", "pivot": [0, 0, 0], "parent": "elder_guardian" },
+        { "name": "creeper", "pivot": [0, 0, 0], "parent": "drowned" },
+        {
+          "name": "blaze",
+          "pivot": [0, 0, 0],
+          "parent": "creeper",
+          "cubes": [{"origin": [-9, 12, 0],"size": [16, 2, 0],"uv": { "north": { "uv": [0, 0], "uv_size": [9, 16] } }}]
         }
       ]
     }

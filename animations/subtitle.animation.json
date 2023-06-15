@@ -4,17 +4,40 @@
     "animation.subtitle": {
       "loop": true,
       "bones": {
-        "skeleton": {
-          "position": [62.0, "q.is_swimming ? -902 : -884.86", 0.0],
-          "scale": 4
-        },
-        "zombie": { "position": [0.0, "(v.skeleton > 0) ? 2 : 0.0", 0.0] },
-        "creeper": { "position": [0.0, "(v.zombie > 0) ? 2 : 0.0", 0.0] },
-        "spider": { "position": [0.0, "(v.creeper > 0) ? 2 : 0.0", 0.0] },
-        "drowned": { "position": [0.0, "(v.spider > 0) ? 2 : 0.0", 0.0] },
-        "enderman": { "position": [0.0, "(v.drowned > 0) ? 2 : 0.0", 0.0] },
-        "pillager": { "position": [0.0, "(v.enderman > 0) ? 2 : 0.0", 0.0] },
-        "witch": { "position": [0.0, "(v.pillager > 0) ? 2 : 0.0", 0.0] }
+        "blaze": {"position": [0.0, "(v.creeper > 0) ? 2 : 0.0", 0.0]},
+        "creeper": {"position": [0.0, "(v.drowned > 0) ? 2 : 0.0", 0.0]},
+        "drowned": {"position": [0.0, "(v.elder_guardian > 0) ? 2 : 0.0", 0.0]},
+        "elder_guardian": {"position": [0.0, "(v.ender_dragon > 0) ? 2 : 0.0", 0.0]},
+        "ender_dragon": {"position": [0.0, "(v.enderman > 0) ? 2 : 0.0", 0.0]},
+        "enderman": {"position": [0.0, "(v.endermite > 0) ? 2 : 0.0", 0.0]},
+        "endermite": {"position": [0.0, "(v.evocation_illager > 0) ? 2 : 0.0", 0.0]},
+        "evocation_illager": {"position": [0.0, "(v.ghast > 0) ? 2 : 0.0", 0.0]},
+        "ghast": {"position": [0.0, "(v.guardian > 0) ? 2 : 0.0", 0.0]},
+        "guardian": {"position": [0.0, "(v.hoglin > 0) ? 2 : 0.0", 0.0]},
+        "hoglin": {"position": [0.0, "(v.husk > 0) ? 2 : 0.0", 0.0]},
+        "husk": {"position": [0.0, "(v.magma_cube > 0) ? 2 : 0.0", 0.0]},
+        "magma_cube": {"position": [0.0, "(v.phantom > 0) ? 2 : 0.0", 0.0]},
+        "phantom": {"position": [0.0, "(v.piglin > 0) ? 2 : 0.0", 0.0]},
+        "piglin": {"position": [0.0, "(v.piglin_brute > 0) ? 2 : 0.0", 0.0]},
+        "piglin_brute": {"position": [0.0, "(v.pillager > 0) ? 2 : 0.0", 0.0]},
+        "pillager": {"position": [0.0, "(v.ravager > 0) ? 2 : 0.0", 0.0]},
+        "ravager": {"position": [0.0, "(v.shulker > 0) ? 2 : 0.0", 0.0]},
+        "shulker": {"position": [0.0, "(v.silverfish > 0) ? 2 : 0.0", 0.0]},
+        "silverfish": {"position": [0.0, "(v.skeleton > 0) ? 2 : 0.0", 0.0]},
+        "skeleton": {"position": [0.0, "(v.slime > 0) ? 2 : 0.0", 0.0]},
+        "slime": {"position": [0.0, "(v.spider > 0) ? 2 : 0.0", 0.0]},
+        "spider": {"position": [0.0, "(v.stray > 0) ? 2 : 0.0", 0.0]},
+        "stray": {"position": [0.0, "(v.vex > 0) ? 2 : 0.0", 0.0]},
+        "vex": {"position": [0.0, "(v.vindicator > 0) ? 2 : 0.0", 0.0]},
+        "vindicator": {"position": [0.0, "(v.warden > 0) ? 2 : 0.0", 0.0]},
+        "warden": {"position": [0.0, "(v.witch > 0) ? 2 : 0.0", 0.0]},
+        "witch": {"position": [0.0, "(v.wither_skeleton > 0) ? 2 : 0.0", 0.0]},
+        "wither_skeleton": {"position": [0.0, "(v.zoglin > 0) ? 2 : 0.0", 0.0]},
+        "wither": {"position": [0.0, "(v.wither_skeleton > 0) ? 2 : 0.0", 0.0]},
+        "zoglin": {"position": [0.0, "(v.zombie > 0) ? 2 : 0.0", 0.0]},
+        "zombie": {"position": [0.0, "(v.zombie_pigman > 0) ? 2 : 0.0", 0.0]},
+        "zombie_pigman": {"position": [0.0, "(v.zombie_villager > 0) ? 2 : 0.0", 0.0]},
+        "zombie_villager": {"position": [62.0, "q.is_swimming ? -902 : -884.86", 0.0], "scale": 4}
       }
     }
   }

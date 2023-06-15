@@ -8,7 +8,7 @@
           "transitions": [{ "loop": "1.0" }],
           //
           //
-          "on_exit": ["v.entity_detection_radius = 75.5;"] /*//// Change This Number to Determine the Required Entity Detection Radius, Default 25 Block ////*/
+          "on_exit": ["v.entity_detection_radius = 25.0;"] /*//// Change This Number to Determine the Required Entity Detection Radius, Default 25 Block ////*/
           //
           //
         },
