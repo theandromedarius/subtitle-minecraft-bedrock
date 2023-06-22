@@ -4,9 +4,9 @@
     "layer": 10,
     "renderer": "live_player_renderer",
     "size": [20, 20],
-    "offset": [-40, -1000],
-    "anchor_from": "bottom_left",
-    "anchor_to": "bottom_left"
+    "offset": [-65, -1000],
+    "anchor_from": "bottom_right",
+    "anchor_to": "bottom_right"
   },
 
   "root_panel": {
