@@ -5,8 +5,7 @@
       "loop": true,
       "bones": {
         "player": {"position": [62, "q.is_swimming ? -902 : -884.86", 0],"scale": 4},
-        "zombie_villager": {"position": [0, "(v.player > 0) ? 2 : 0.0", 0]},
-        
+        "zombie_villager": {"position": [0, "(v.player > 0) ? 2 : 0.0", 0]},        
         "zombie_pigman": {"position": [0, "(v.zombie_villager > 0) ? 2 : 0.0", 0]},
         "zombie_horse": {"position": [0, "(v.zombie_pigman > 0) ? 2 : 0.0", 0]},
         "zombie": {"position": [0, "(v.zombie_horse > 0) ? 2 : 0.0", 0]},
@@ -17,7 +16,6 @@
         "witch": {"position": [0, "(v.wither > 0) ? 2 : 0.0", 0]},
         "warden": {"position": [0, "(v.witch > 0) ? 2 : 0.0", 0]},
         "wandering_trader": {"position": [0, "(v.warden > 0) ? 2 : 0.0", 0]},
-
         "vindicator": {"position": [0, "(v.wandering_trader > 0) ? 2 : 0.0", 0]},
         "villager": {"position": [0, "(v.vindicator > 0) ? 2 : 0.0", 0]},
         "vex": {"position": [0, "(v.villager > 0) ? 2 : 0.0", 0]},
@@ -29,7 +27,6 @@
         "stray": {"position": [0, "(v.strider > 0) ? 2 : 0.0", 0]},
         "squid": {"position": [0, "(v.stray > 0) ? 2 : 0.0", 0]},
         "spider": {"position": [0, "(v.squid > 0) ? 2 : 0.0", 0]},
-
         "snow_golem": {"position": [0, "(v.spider > 0) ? 2 : 0.0", 0]},
         "sniffer": {"position": [0, "(v.snow_golem > 0) ? 2 : 0.0", 0]},
         "slime": {"position": [0, "(v.sniffer > 0) ? 2 : 0.0", 0]},
@@ -41,7 +38,6 @@
         "salmon": {"position": [0, "(v.sheep > 0) ? 2 : 0.0", 0]},
         "ravager": {"position": [0, "(v.salmon > 0) ? 2 : 0.0", 0]},
         "rabbit": {"position": [0, "(v.ravager > 0) ? 2 : 0.0", 0]},
-
         "pufferfish": {"position": [0, "(v.rabbit > 0) ? 2 : 0.0", 0]},
         "polar_bear": {"position": [0, "(v.pufferfish > 0) ? 2 : 0.0", 0]},
         "pillager": {"position": [0, "(v.polar_bear > 0) ? 2 : 0.0", 0]},
@@ -52,7 +48,6 @@
         "panda": {"position": [0, "(v.phantom > 0) ? 2 : 0.0", 0]},
         "parrot": {"position": [0, "(v.panda > 0) ? 2 : 0.0", 0]},
         "ocelot": {"position": [0, "(v.parrot > 0) ? 2 : 0.0", 0]},
-
         "mule": {"position": [0, "(v.ocelot > 0) ? 2 : 0.0", 0]},
         "mooshroom": {"position": [0, "(v.mule > 0) ? 2 : 0.0", 0]},
         "magma_cube": {"position": [0, "(v.mooshroom > 0) ? 2 : 0.0", 0]},
@@ -64,7 +59,6 @@
         "guardian": {"position": [0, "(v.hoglin > 0) ? 2 : 0.0", 0]},
         "goat": {"position": [0, "(v.guardian > 0) ? 2 : 0.0", 0]},
         "glow_squid": {"position": [0, "(v.goat > 0) ? 2 : 0.0", 0]},
-
         "ghast": {"position": [0, "(v.glow_squid > 0) ? 2 : 0.0", 0]},
         "frog": {"position": [0, "(v.ghast > 0) ? 2 : 0.0", 0]},
         "fox": {"position": [0, "(v.frog > 0) ? 2 : 0.0", 0]},
@@ -75,13 +69,13 @@
         "elder_guardian": {"position": [0, "(v.ender_dragon > 0) ? 2 : 0.0", 0]},
         "drowned": {"position": [0, "(v.elder_guardian > 0) ? 2 : 0.0", 0]},
         "donkey": {"position": [0, "(v.drowned > 0) ? 2 : 0.0", 0]},
-
         "dolphin": {"position": [0, "(v.donkey > 0) ? 2 : 0.0", 0]},
         "creeper": {"position": [0, "(v.dolphin > 0) ? 2 : 0.0", 0]},
         "cow": {"position": [0, "(v.creeper > 0) ? 2 : 0.0", 0]},
         "cod": {"position": [0, "(v.cow > 0) ? 2 : 0.0", 0]},
         "chicken": {"position": [0, "(v.cod > 0) ? 2 : 0.0", 0]},
-        "cat": {"position": [0, "(v.chicken > 0) ? 2 : 0.0", 0]},
+        "cave_spider": {"position": [0, "(v.chicken > 0) ? 2 : 0.0", 0]},
+        "cat": {"position": [0, "(v.cave_spider > 0) ? 2 : 0.0", 0]},
         "camel": {"position": [0, "(v.cat > 0) ? 2 : 0.0", 0]},
         "blaze": {"position": [0, "(v.camel > 0) ? 2 : 0.0", 0]},
         "bee": {"position": [0, "(v.blaze > 0) ? 2 : 0.0", 0]},

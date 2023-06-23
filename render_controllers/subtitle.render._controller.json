@@ -380,6 +380,11 @@
       "textures": ["Texture.camel"],
       "geometry": "Geometry.object.camel",
       "materials": [{ "*": "Material.default" }]
+    },
+    "controller.render.object.cave_spider": {
+      "textures": ["Texture.cave_spider"],
+      "geometry": "Geometry.object.cave_spider",
+      "materials": [{ "*": "Material.default" }]
     }
   }
 }
