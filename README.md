@@ -1,5 +1,5 @@
 
-# --Hostile Mob Subtitle (Entity Detect) Bedrock Edition--
+# --Mob Subtitle (Entity Detect) Bedrock Edition--
 
 ## Important: Enable "Molang Experimental"
 
