@@ -471,7 +471,7 @@
           {
             "name": "trader_llama",
             "pivot": [0, 0, 0],
-            "parent": "turtle",
+            "parent": "tropicalfish",
             "cubes": [{"origin": [-28.5, 12, 0],"size": [28.5, 2, 0],"uv": {"north": {"uv": [0, 0], "uv_size": [128, 9]}}}]
           }
         ]
@@ -1611,7 +1611,7 @@
           {
             "name": "panda",
             "pivot": [0, 0, 0],
-            "parent": "pig",
+            "parent": "phantom",
             "cubes": [{"origin": [-28.5, 12, 0],"size": [28.5, 2, 0],"uv": {"north": {"uv": [0, 0], "uv_size": [128, 9]}}}]
           }
         ]
